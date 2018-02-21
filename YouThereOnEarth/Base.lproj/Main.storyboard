@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X4N-N7-gv3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -37,6 +37,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-12" y="-114"/>
+        </scene>
+        <!--Geo Coding View Controller-->
+        <scene sceneID="i8V-oU-Kdx">
+            <objects>
+                <viewController id="X4N-N7-gv3" customClass="GeoCodingViewController" customModule="YouThereOnEarth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qDN-nI-fsm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qXt-f5-gu7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eP9-d6-2Oi" firstAttribute="trailing" secondItem="qXt-f5-gu7" secondAttribute="trailing" id="DbD-Nn-ev1"/>
+                            <constraint firstItem="qXt-f5-gu7" firstAttribute="leading" secondItem="eP9-d6-2Oi" secondAttribute="leading" id="Vaz-Xn-zMd"/>
+                            <constraint firstItem="eP9-d6-2Oi" firstAttribute="bottom" secondItem="qXt-f5-gu7" secondAttribute="bottom" id="ohM-4t-Sw4"/>
+                            <constraint firstItem="qXt-f5-gu7" firstAttribute="top" secondItem="eP9-d6-2Oi" secondAttribute="top" id="sfR-Gp-fdw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eP9-d6-2Oi"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="qXt-f5-gu7" id="xeV-zy-Sfx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gT0-PY-Kmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="-115"/>
         </scene>
     </scenes>
 </document>
