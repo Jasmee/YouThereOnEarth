@@ -13,6 +13,7 @@
 		0F84E2A2203C464F00EF759B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F84E2A1203C464F00EF759B /* Assets.xcassets */; };
 		0F84E2A5203C464F00EF759B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F84E2A3203C464F00EF759B /* LaunchScreen.storyboard */; };
 		0F84E2AD203D400400EF759B /* GeoCodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F84E2AC203D400300EF759B /* GeoCodingViewController.swift */; };
+		0F84E2AF203D52FE00EF759B /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F84E2AE203D52FE00EF759B /* CurrentLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0F84E2A4203C464F00EF759B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F84E2A6203C464F00EF759B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F84E2AC203D400300EF759B /* GeoCodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCodingViewController.swift; sourceTree = "<group>"; };
+		0F84E2AE203D52FE00EF759B /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				0F84E2A3203C464F00EF759B /* LaunchScreen.storyboard */,
 				0F84E2A6203C464F00EF759B /* Info.plist */,
 				0F84E2AC203D400300EF759B /* GeoCodingViewController.swift */,
+				0F84E2AE203D52FE00EF759B /* CurrentLocationViewController.swift */,
 			);
 			path = YouThereOnEarth;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F84E29D203C464F00EF759B /* BasicMapViewController.swift in Sources */,
+				0F84E2AF203D52FE00EF759B /* CurrentLocationViewController.swift in Sources */,
 				0F84E2AD203D400400EF759B /* GeoCodingViewController.swift in Sources */,
 				0F84E29B203C464F00EF759B /* AppDelegate.swift in Sources */,
 			);

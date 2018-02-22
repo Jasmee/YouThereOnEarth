@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X4N-N7-gv3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pln-TD-wCf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -67,6 +67,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gT0-PY-Kmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="836" y="-115"/>
+        </scene>
+        <!--Current Location View Controller-->
+        <scene sceneID="uw2-pD-3kK">
+            <objects>
+                <viewController id="pln-TD-wCf" customClass="CurrentLocationViewController" customModule="YouThereOnEarth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pHA-qh-DRU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s8a-EW-Cvh">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cy-67-HtN">
+                                <rect key="frame" x="117" y="42" width="140" height="30"/>
+                                <state key="normal" title="My Current Location"/>
+                                <connections>
+                                    <action selector="getCurrentLocation:" destination="pln-TD-wCf" eventType="touchUpInside" id="B7l-h5-gjP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s8a-EW-Cvh" firstAttribute="trailing" secondItem="FPs-Tz-cHu" secondAttribute="trailing" id="88b-zD-cLY"/>
+                            <constraint firstItem="s8a-EW-Cvh" firstAttribute="leading" secondItem="FPs-Tz-cHu" secondAttribute="leading" id="FPw-kE-dAW"/>
+                            <constraint firstItem="s8a-EW-Cvh" firstAttribute="bottom" secondItem="FPs-Tz-cHu" secondAttribute="bottom" id="I7o-Hi-4LZ"/>
+                            <constraint firstItem="s8a-EW-Cvh" firstAttribute="top" secondItem="1Cy-67-HtN" secondAttribute="bottom" constant="8" id="JOv-3z-466"/>
+                            <constraint firstItem="1Cy-67-HtN" firstAttribute="centerX" secondItem="FPs-Tz-cHu" secondAttribute="centerX" id="sjJ-Pt-1qe"/>
+                            <constraint firstItem="s8a-EW-Cvh" firstAttribute="top" secondItem="FPs-Tz-cHu" secondAttribute="top" constant="60" id="zVR-KP-6oA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FPs-Tz-cHu"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="s8a-EW-Cvh" id="Klq-MB-emf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2J-C0-leC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1599" y="-115"/>
         </scene>
     </scenes>
 </document>
