@@ -27,32 +27,50 @@ class GeoFenceViewController: UIViewController, CLLocationManagerDelegate {
         setUpLocationManager()
         if CLLocationManager.locationServicesEnabled() {
             locationManager?.startUpdatingLocation()
-            setUpGeoFenceFor(location: "Office")
+            setUpGeoFenceFor(location: "office")
         }
     }
     
     func setUpLocationManager() {
+        locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         locationManager?.requestAlwaysAuthorization()
     }
     
     func setUpGeoFenceFor(location: String) {
-        var coordinate = CLLocationCoordinate2D()
+        var coordinate: CLLocationCoordinate2D?
         if let placeName = place(rawValue: location) {
-            getCoordinates(location: placeName)
+            coordinate = getCoordinates(location: placeName)
         }
-    
-        let center = CLLocationCoordinate2D(latitude: 13, longitude: 77)
+        guard let center = coordinate else {
+            print("Could not get location coordiantes")
+            return
+        }
         let geoFenceRegion = CLCircularRegion(center: center, radius: 400, identifier: "Manyata D3")
         geoFenceRegion.notifyOnEntry = true
         geoFenceRegion.notifyOnExit = true
         locationManager?.startMonitoring(for: geoFenceRegion)
     }
     
+    func getCoordinates(location: place) -> CLLocationCoordinate2D {
+        switch location {
+        case place.home:
+            return HOME_COORDINATE
+        case place.office:
+            return OFFICE_COORDINATE
+        case place.spar:
+            return SPAR_COORDINATE
+        case place.kalyannagar:
+            return KALYANNAGAR_COORDINATE
+        }
+    }
+    
+    // MARK: CLLocationManager Delegates
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if CLLocationManager.authorizationStatus() == .authorizedAlways {
-            setUpGeoFenceFor(location: "Office")
+            setUpGeoFenceFor(location: "office")
         }
     }
     
@@ -62,19 +80,6 @@ class GeoFenceViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("Exit")
-    }
-    
-    func getCoordinates(location: place) -> CLLocationCoordinate2D {
-        switch location {
-        case place.home:
-            return CLLocationCoordinate2D(latitude: 13, longitude: 77)
-        case place.office:
-            return CLLocationCoordinate2D(latitude: 13, longitude: 77)
-        case place.spar:
-            return CLLocationCoordinate2D(latitude: 13, longitude: 77)
-        case place.kalyannagar:
-            return CLLocationCoordinate2D(latitude: 13, longitude: 77)
-        }
     }
     
 }
